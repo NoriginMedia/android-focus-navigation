@@ -17,6 +17,7 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Gallery from './src/components/Gallery';
+import Menu from './src/components/Menu';
 
 const App = () => {
   return (
@@ -27,13 +28,13 @@ const App = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <View style={styles.body}>
+            <Menu />
             <View style={styles.sectionContainer}>
               <Gallery rowNumber={0} />
-
               <Gallery />
-
               <Gallery />
-
+              <Gallery />
+              <Gallery />
               <Gallery />
             </View>
           </View>
@@ -56,6 +57,7 @@ const styles = StyleSheet.create({
   },
   sectionContainer: {
     marginTop: 32,
+    marginLeft: 10,
     paddingHorizontal: 24,
   },
   sectionTitle: {

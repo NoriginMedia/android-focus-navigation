@@ -15,6 +15,7 @@ const Gallery = ({rowNumber}) => {
           title={item.name}
           image={item.image}
           hasTVPreferredFocus={rowNumber === 0 && i === 0}
+          blockFocusRight={i === items.length - 1}
         />
       ))}
     </ScrollView>

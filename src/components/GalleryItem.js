@@ -1,7 +1,14 @@
-import React, {useState, useCallback} from 'react';
-import {StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
+import React, {useState, useCallback, useRef} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  findNodeHandle,
+} from 'react-native';
 
-const GalleryItem = ({title, image, hasTVPreferredFocus}) => {
+const GalleryItem = ({title, image, hasTVPreferredFocus, blockFocusRight}) => {
   const [focus, setFocus] = useState(false);
 
   const onFocus = useCallback(() => {
@@ -12,12 +19,23 @@ const GalleryItem = ({title, image, hasTVPreferredFocus}) => {
     setFocus(false);
   }, []);
 
+  const touchableHighlightRef = useRef(null);
+  const onRef = useCallback((ref) => {
+    if (ref) {
+      touchableHighlightRef.current = ref;
+    }
+  }, []);
+
   return (
     <TouchableHighlight
       onFocus={onFocus}
       onBlur={onBlur}
       hasTVPreferredFocus={hasTVPreferredFocus}
-      style={[styles.wrapper, focus ? styles.wrapperFocused : null]}>
+      style={[styles.wrapper, focus ? styles.wrapperFocused : null]}
+      ref={onRef}
+      nextFocusRight={
+        blockFocusRight ? findNodeHandle(touchableHighlightRef.current) : null
+      }>
       <View>
         <Image style={styles.image} source={image} />
         <Text style={styles.text}>{title}</Text>
