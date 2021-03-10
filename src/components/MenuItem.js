@@ -26,15 +26,16 @@ const MenuItem = ({setMenuFocus}) => {
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#333',
-    width: '100%',
-    height: 100,
-    top: 100,
+    backgroundColor: '#808080',
+    alignSelf: 'stretch',
+    height: 30,
     left: 0,
-    marginVertical: 10,
+    marginBottom: 25,
+    marginHorizontal: 25,
+    borderRadius: 5,
   },
   itemFocused: {
-    backgroundColor: 'rgb(232, 65, 175)',
+    backgroundColor: '#714add',
   },
 });
 

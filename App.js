@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.black,
   },
   sectionContainer: {
     marginTop: 32,

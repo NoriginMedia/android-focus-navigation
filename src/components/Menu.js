@@ -7,6 +7,8 @@ const Menu = ({}) => {
 
   return (
     <View style={[styles.wrapper, focus ? styles.wrapperFocused : null]}>
+      <View style={styles.circle} />
+      <MenuItem setMenuFocus={setFocus} />
       <MenuItem setMenuFocus={setFocus} />
       <MenuItem setMenuFocus={setFocus} />
       <MenuItem setMenuFocus={setFocus} />
@@ -18,23 +20,27 @@ const Menu = ({}) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: '#ccc',
-    width: 50,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    width: 100,
     height: '100%',
     position: 'absolute',
     top: 0,
-    zIndex: -1,
-    borderRightColor: '#999',
-    borderRightWidth: 5,
-    opacity: 0.1,
-
+    zIndex: 1,
     left: -200,
     transform: [{translateX: 200}],
   },
   wrapperFocused: {
-    opacity: 1,
-    zIndex: 1,
-    width: 250,
+    width: 200,
+  },
+  circle: {
+    backgroundColor: '#808080',
+    width: 50,
+    height: 50,
+    top: 30,
+    left: '50%',
+    transform: [{translateX: -25}],
+    borderRadius: 30,
+    marginBottom: 110,
   },
 });
 

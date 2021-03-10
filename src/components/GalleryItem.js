@@ -47,12 +47,12 @@ const GalleryItem = ({title, image, hasTVPreferredFocus, blockFocusRight}) => {
 const styles = StyleSheet.create({
   wrapper: {
     borderColor: 'transparent',
-    borderWidth: 5,
-    borderRadius: 15,
+    borderWidth: 4,
+    borderRadius: 10,
     marginHorizontal: 10,
   },
   wrapperFocused: {
-    borderColor: 'rgb(232, 65, 175)',
+    borderColor: '#714add',
   },
   image: {
     width: 250,

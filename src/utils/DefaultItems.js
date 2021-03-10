@@ -14,7 +14,7 @@ export const DEFAULT_ITEMS = [
     image: ImgGentleman,
   },
   {
-    name: 'Kings Man',
+    name: "The King's Man",
     image: ImgKingsMan,
   },
   {
